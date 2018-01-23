@@ -1,0 +1,21 @@
+server:
+  applicationConnectors:
+  - type: http
+    port: 9000
+  adminConnectors:
+  - type: http
+    port: 9001
+tempDir: /tmp
+officeDir: /opt/libreoffice5.4/program
+veraPDFPath: verapdfPath/verapdf
+logging:
+  level: WARN
+  loggers:
+    org.verapdf.converter:
+      level: INFO
+  appenders:
+  - type: file
+    currentLogFilename: someLogsPath/converter.log
+    archive: true
+    archivedLogFilenamePattern: someLogsPath/converter-%d.log
+    archivedFileCount: 10
